@@ -4,123 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Didula MD MINI BOT</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
             margin: 0;
             padding: 0;
-            background-color: #0a0a0a;
-            font-family: 'Courier New', monospace;
-            color: #00ff00;
-            line-height: 1.6;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px;
+            border-radius: 15px;
+            max-width: 500px;
+            width: 100%;
             text-align: center;
-            padding: 50px 0;
-            border-bottom: 2px solid #00ff00;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
         }
 
-        .header h1 {
-            font-size: 3em;
-            margin: 0;
-            text-shadow: 0 0 10px #00ff00;
+        h1 {
+            font-size: 2.2em;
+            margin-bottom: 10px;
         }
 
-        .content {
-            margin: 50px 0;
-            text-align: center;
+        p {
+            font-size: 1.1em;
+            margin-bottom: 25px;
         }
 
         .bot-info {
-            background-color: rgba(0, 255, 0, 0.1);
-            padding: 30px;
+            background-color: #ffffff20;
+            padding: 15px;
             border-radius: 10px;
-            margin: 20px 0;
-            border: 1px solid #00ff00;
+            margin-bottom: 25px;
         }
 
-        .connect-button {
-            display: inline-block;
-            padding: 15px 40px;
-            background-color: #00ff00;
-            color: #000;
+        .bot-info p {
+            margin: 5px 0;
+            color: #e0ffe0;
+        }
+
+        .connect-btn {
+            background-color: #25d366;
+            color: #fff;
             text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-            font-size: 1.2em;
-            margin-top: 30px;
-            transition: all 0.3s ease;
-        }
-
-        .connect-button:hover {
-            background-color: #000;
-            color: #00ff00;
-            border: 2px solid #00ff00;
-            box-shadow: 0 0 20px #00ff00;
-        }
-
-        .matrix-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0.1;
-            z-index: -1;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 255, 0, 0.2) 0%,
-                rgba(0, 255, 0, 0.2) 50%,
-                transparent 50%,
-                transparent 100%
-            );
-            background-size: 4px 4px;
-            animation: scroll 20s linear infinite;
-        }
-
-        @keyframes scroll {
-            0% { background-position: 0 0; }
-            100% { background-position: 0 100%; }
-        }
-
-        .owner-info {
-            margin-top: 40px;
+            padding: 15px 30px;
             font-size: 1.1em;
+            border-radius: 30px;
+            transition: background-color 0.3s;
+        }
+
+        .connect-btn:hover {
+            background-color: #128c7e;
+        }
+
+        footer {
+            margin-top: 40px;
+            font-size: 0.9em;
+            color: #ccffcc;
         }
     </style>
 </head>
 <body>
-    <div class="matrix-bg"></div>
+
     <div class="container">
-        <div class="header">
-            <h1>Didula MD MINI BOT</h1>
-            <p>Your Advanced WhatsApp Bot Solution</p>
+        <h1>🤖 Didula MD MINI BOT</h1>
+        <p>Your powerful WhatsApp assistant, ready to help you!</p>
+
+        <div class="bot-info">
+            <p><strong>Owner:</strong> Didula Rashmika</p>
+            <p><strong>Contact:</strong> <a href="tel:+94741671668" style="color: #b3fcd8;">+94 741 671 668</a></p>
         </div>
 
-        <div class="content">
-            <div class="bot-info">
-                <h2>Bot Information</h2>
-                <p><strong>Bot Name:</strong> Didula MD MINI BOT</p>
-                <p><strong>Owner:</strong> Didula Rashmika</p>
-                <p><strong>Contact:</strong> +94741671668</p>
-            </div>
-
-            <a href="https://didulamdmini-f43a5af30dd4.herokuapp.com/pair" class="connect-button">
-                Connect Your WhatsApp
-            </a>
-
-            <div class="owner-info">
-                <h3>About the Developer</h3>
-                <p>Created with ❤️ by Didula Rashmika</p>
-                <p>Experience the power of automation with our advanced WhatsApp bot</p>
-            </div>
-        </div>
+        <a href="https://didulamdmini-f43a5af30dd4.herokuapp.com/pair" target="_blank" class="connect-btn">🔗 Connect to Bot</a>
     </div>
+
+    <footer>
+        &copy; 2025 Didula MD MINI BOT. All rights reserved.
+    </footer>
+
 </body>
-  </html>
+</html>
