@@ -4,95 +4,124 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Didula MD MINI BOT</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(135deg, #1f4037, #99f2c8);
-            color: #fff;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 20px;
+            background: linear-gradient(135deg, #1e1e2e, #2d2d44);
+            color: #ffffff;
             min-height: 100vh;
         }
 
         .container {
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 30px;
-            border-radius: 15px;
-            max-width: 500px;
-            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
             text-align: center;
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            margin-bottom: 3rem;
         }
 
-        h1 {
-            font-size: 2.2em;
-            margin-bottom: 10px;
+        .logo {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            margin: 2rem auto;
+            display: block;
+            border: 4px solid #4CAF50;
         }
 
-        p {
-            font-size: 1.1em;
-            margin-bottom: 25px;
+        .title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #4CAF50;
         }
 
-        .bot-info {
-            background-color: #ffffff20;
-            padding: 15px;
-            border-radius: 10px;
-            margin-bottom: 25px;
+        .description {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: #cccccc;
         }
 
-        .bot-info p {
-            margin: 5px 0;
-            color: #e0ffe0;
+        .info-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
         }
 
-        .connect-btn {
-            background-color: #25d366;
-            color: #fff;
-            text-decoration: none;
-            padding: 15px 30px;
-            font-size: 1.1em;
+        .info-item {
+            margin-bottom: 1rem;
+        }
+
+        .info-label {
+            font-weight: bold;
+            color: #4CAF50;
+        }
+
+        .connect-button {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 1rem 2rem;
             border-radius: 30px;
-            transition: background-color 0.3s;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
         }
 
-        .connect-btn:hover {
-            background-color: #128c7e;
+        .connect-button:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
         }
 
-        footer {
-            margin-top: 40px;
-            font-size: 0.9em;
-            color: #ccffcc;
+        .footer {
+            text-align: center;
+            margin-top: 3rem;
+            color: #888888;
         }
     </style>
 </head>
 <body>
-
     <div class="container">
-        <h1>🤖 Didula MD MINI BOT</h1>
-        <p>Your powerful WhatsApp assistant, ready to help you!</p>
-
-        <div class="bot-info">
-            <p><strong>Owner:</strong> Didula Rashmika</p>
-            <p><strong>Contact:</strong> <a href="tel:+94741671668" style="color: #b3fcd8;">+94 741 671 668</a></p>
+        <div class="header">
+            <img src="https://files.catbox.moe/2n041m.jpg" alt="Didula MD MINI BOT Logo" class="logo">
+            <h1 class="title">Didula MD MINI BOT</h1>
+            <p class="description">Your Advanced WhatsApp Bot Assistant</p>
         </div>
 
-        <a href="https://didulamdmini-f43a5af30dd4.herokuapp.com/pair" target="_blank" class="connect-btn">🔗 Connect to Bot</a>
+        <div class="info-card">
+            <div class="info-item">
+                <span class="info-label">Bot Name:</span>
+                <span>Didula MD MINI BOT</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Owner:</span>
+                <span>Didula Rashmika</span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Contact:</span>
+                <span>+94741671668</span>
+            </div>
+            
+            <center>
+                <a href="https://didulamdmini-f43a5af30dd4.herokuapp.com/pair" class="connect-button">Connect Now</a>
+            </center>
+        </div>
+
+        <div class="footer">
+            <p>© 2024 Didula MD MINI BOT. All rights reserved.</p>
+        </div>
     </div>
-
-    <footer>
-        &copy; 2025 Didula MD MINI BOT. All rights reserved.
-    </footer>
-
 </body>
 </html>
