@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Didula MD MINI BOT</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap">
     <style>
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -13,82 +15,165 @@
         }
 
         body {
-            background: linear-gradient(135deg, #1e1e2e, #2d2d44);
+            background: linear-gradient(135deg, #1a1a2e, #24243e);
             color: #ffffff;
             min-height: 100vh;
+            overflow-x: hidden;
+            perspective: 1000px;
         }
 
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
         }
 
+        /* Header Section */
         .header {
             text-align: center;
             margin-bottom: 3rem;
+            animation: fadeIn 1.5s ease-in-out;
         }
 
         .logo {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             margin: 2rem auto;
             display: block;
-            border: 4px solid #4CAF50;
+            border: 5px solid transparent;
+            background-image: linear-gradient(#1a1a2e, #1a1a2e), linear-gradient(135deg, #4CAF50, #08aeea);
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            box-shadow: 0 0 20px rgba(76, 175, 80, 0.5);
+            transform: rotateY(0deg);
+            transition: transform 0.5s ease;
+        }
+
+        .logo:hover {
+            transform: rotateY(10deg) scale(1.05);
         }
 
         .title {
-            font-size: 2.5rem;
+            font-size: 3rem;
+            font-weight: 700;
             margin-bottom: 1rem;
             color: #4CAF50;
+            text-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+            animation: textGlow 2s infinite;
         }
 
         .description {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
+            font-weight: 300;
             margin-bottom: 2rem;
-            color: #cccccc;
+            color: #b3b3b3;
         }
 
+        /* Info Card */
         .info-card {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            padding: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2.5rem;
             margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.37);
+            transform: translateZ(0);
+            transition: transform 0.3s ease;
+        }
+
+        .info-card:hover {
+            transform: translateZ(20px);
         }
 
         .info-item {
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
         }
 
         .info-label {
-            font-weight: bold;
+            font-weight: 600;
             color: #4CAF50;
+            font-size: 1.1rem;
         }
 
+        .info-value {
+            font-size: 1.1rem;
+            color: #cccccc;
+        }
+
+        /* Connect Button */
         .connect-button {
             display: inline-block;
-            background: #4CAF50;
+            background: linear-gradient(135deg, #4CAF50, #08aeea);
             color: white;
-            padding: 1rem 2rem;
+            padding: 1.2rem 3rem;
             border-radius: 30px;
             text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-            margin-top: 2rem;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .connect-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.7s ease;
+        }
+
+        .connect-button:hover::before {
+            left: 100%;
         }
 
         .connect-button:hover {
-            background: #45a049;
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(76, 175, 80, 0.3);
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 20px rgba(76, 175, 80, 0.4);
         }
 
+        /* Footer */
         .footer {
             text-align: center;
             margin-top: 3rem;
-            color: #888888;
+            color: #666666;
+            font-size: 0.9rem;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textGlow {
+            0%, 100% {
+                text-shadow: 0 0 10px rgba(76, 175, 80, 0.7);
+            }
+            50% {
+                text-shadow: 0 0 20px rgba(76, 175, 80, 1);
+            }
         }
     </style>
 </head>
@@ -103,24 +188,26 @@
         <div class="info-card">
             <div class="info-item">
                 <span class="info-label">Bot Name:</span>
-                <span>Didula MD MINI BOT</span>
+                <span class="info-value">Didula MD MINI BOT</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Owner:</span>
-                <span>Didula Rashmika</span>
+                <span class="info-value">Didula Rashmika</span>
             </div>
             <div class="info-item">
                 <span class="info-label">Contact:</span>
-                <span>+94741671668</span>
+                <span class="info-value">+94741671668</span>
             </div>
-            
+
             <center>
-                <a href="https://didulamdmini-ba33e22e95e1.herokuapp.com/" class="connect-button">Connect Now</a>
+                <a href="https://didulamdmini-ba33e22e95e1.herokuapp.com/" class="connect-button">
+                    Connect Now
+                </a>
             </center>
         </div>
 
         <div class="footer">
-            <p>© 2024 Didula MD MINI BOT. All rights reserved.</p>
+            <p> 2024 Didula MD MINI BOT. All rights reserved.</p>
         </div>
     </div>
 </body>
