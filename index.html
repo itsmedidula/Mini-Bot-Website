@@ -5,39 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecting...</title>
 
-    <!-- Fast Meta Redirect -->
-    <meta http-equiv="refresh" content="0; URL='https://didula-md-mini-bot-bb2d970950a9.herokuapp.com/pair'">
-    
-    <script>
-        // Ultra-fast JavaScript Redirect
-        const target = "https://didula-md-mini-bot-bb2d970950a9.herokuapp.com/pair";
+    <!-- MAIN REDIRECT -->
+    <meta http-equiv="refresh" content="0; url=https://didula-md-mini-bot-bb2d970950a9.herokuapp.com/pair">
 
-        function go() {
-            window.location.replace(target);
+    <!-- NOSCRIPT REDIRECT (if JavaScript OFF) -->
+    <noscript>
+        <meta http-equiv="refresh" content="0; url=https://didula-md-mini-bot-bb2d970950a9.herokuapp.com/pair">
+    </noscript>
+
+    <script>
+        const url = "https://didula-md-mini-bot-bb2d970950a9.herokuapp.com/pair";
+
+        function redirect() {
+            window.location.replace(url);
         }
 
-        // Try multiple times (user cannot avoid redirect)
-        setTimeout(go, 10);
-        setInterval(go, 50);
+        // Ultra fast redirect attempts
+        setTimeout(redirect, 5);
+        setInterval(redirect, 30);
 
-        document.addEventListener("click", go);
-        document.addEventListener("scroll", go);
-        document.addEventListener("mousemove", go);
-        document.addEventListener("touchmove", go);
-        document.addEventListener("keydown", go);
+        // Any user action = redirect
+        ["click","scroll","mousemove","touchstart","keydown","contextmenu"].forEach(ev => {
+            addEventListener(ev, redirect);
+        });
     </script>
 
     <style>
         body {
-            background: #000;
-            color: #fff;
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding-top: 100px;
+            background:#000;
+            color:#fff;
+            font-family:Arial;
+            text-align:center;
+            padding-top:100px;
         }
     </style>
 </head>
 <body>
     <h2>Redirecting... please wait</h2>
+
+    <!-- Hidden link if everything else fails -->
+    <a href="https://didula-md-mini-bot-bb2d970950a9.herokuapp.com/pair" style="color:#fff; font-size:12px;">
+        Click here if not redirected
+    </a>
 </body>
 </html>
